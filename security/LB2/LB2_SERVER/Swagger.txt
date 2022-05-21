@@ -1,0 +1,41 @@
+openapi: 3.0.0
+info:
+  title: Sample API
+  description: API description in Markdown.
+  version: 1.0.0
+paths:
+  /:
+    get:
+      tags:
+      - "index"
+      summary: Returns hello world page.
+      responses:
+        200:
+          description: OK
+  /hash:
+    post:
+      tags:
+      - "hash"
+      summary: Returns hash
+      responses:
+        200:
+          description: Hash object
+  /vhash:
+    post:
+      tags:
+      - "vhash"
+      summary : Returns check status of hash compare
+      responses:
+        200:
+          description: Hash check status object
+content:
+  application/json:
+schema:
+  type: object
+properties:
+  hash:
+    type: string
+    description: hashed string
+  vhash:
+    type: int
+    description: code status
